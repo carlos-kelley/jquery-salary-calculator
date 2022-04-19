@@ -37,11 +37,11 @@ function displayEmployees( arrayToDisplay ){
     for( let i=0; i<arrayToDisplay.length; i++){
         el.append( `<li>${ arrayToDisplay[i].firstName } ${ arrayToDisplay[i].lastName }: ${ arrayToDisplay[i].IDNumber }, ${ arrayToDisplay[i].annualSalary }, ${ arrayToDisplay[i].jobTitle }  
         <button class="removeEmployeeButton" data-index="${i}">Remove Employee</button></li>` );
-        employeeSalary += Number( arrayToDisplay[i].salary );
+        employeeSalary += Number( arrayToDisplay[i].annualSalary );
     }
     el = $( '#totalMonthlyCostOut' );
     el.empty();
-    el.append( employeeSalary.toFixed( 2 ) );
+    el.append( (employeeSalary / 12).toFixed( 2 ) );
 }
 
 function removeEmployee(){
