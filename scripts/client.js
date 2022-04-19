@@ -41,7 +41,13 @@ function displayEmployees( arrayToDisplay ){
     }
     el = $( '#totalMonthlyCostOut' );
     el.empty();
-    el.append( (employeeSalary / 12).toFixed( 2 ) );
+    let totalMonthlyCost = (employeeSalary / 12);
+    el.append( totalMonthlyCost.toFixed ( 2 ) );
+    console.log(totalMonthlyCost);
+    let clasChanger = document.getElementById('totalMonthlyCostOut');
+    if(totalMonthlyCost > 20000){
+        $('#totalMonthlyCostOut').addClass('redClass');
+    }
 }
 
 function removeEmployee(){
