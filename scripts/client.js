@@ -35,7 +35,7 @@ function displayEmployees( arrayToDisplay ){
     el.empty();
     let employeeSalary = 0;
     for( let i=0; i<arrayToDisplay.length; i++){
-        el.append( `<li>${ arrayToDisplay[i].firstName } ${ arrayToDisplay[i].lastName }: ${ arrayToDisplay[i].IDNumber }, ${ arrayToDisplay[i].annualSalary }, ${ arrayToDisplay[i].jobTitle }  
+        el.append( `<li>${ arrayToDisplay[i].firstName } ${ arrayToDisplay[i].lastName }: ID #${ arrayToDisplay[i].IDNumber }, Annual Salary $${ arrayToDisplay[i].annualSalary }, ${ arrayToDisplay[i].jobTitle }  
         <button class="removeEmployeeButton" data-index="${i}">Remove Employee</button></li>` );
         employeeSalary += Number( arrayToDisplay[i].annualSalary );
     }
@@ -52,5 +52,11 @@ function displayEmployees( arrayToDisplay ){
 
 function removeEmployee(){
     console.log( 'in removeEmployee' );
-    $( this ).parent().remove();   
+    //$( this ).parent().remove();  
+    // get this item's index
+    console.log( $( this ).data( 'index' ) );
+    // splice this item out of inventory
+    employees.splice( $( this ).data( 'index' ), 1 );
+    // display the updated inventory
+    displayEmployees( employees ); 
 }           
