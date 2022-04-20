@@ -3,7 +3,6 @@ $( document ).ready( onReady );
 let employees = [];
 
 function onReady(){
-    // click handler
     $( '#submitButton' ).on( 'click', addEmployee );
     $( '#employeesOut' ).on( 'click', '.removeEmployeeButton', removeEmployee );
 }
@@ -21,13 +20,12 @@ function addEmployee(){
     employees.push( employee );
     console.log( employees );
     displayEmployees( employees );
-    // empty input fields
     $( '#firstNameIn' ).val( '' );
     $( '#lastNameIn' ).val( '' );
     $( '#IDNumberIn' ).val( '' );
     $( '#jobTitleIn' ).val( '' );
     $( '#annualSalaryIn' ).val( '' );
-} // end addItem
+} 
 
 function displayEmployees( arrayToDisplay ){
     console.log( 'in displayEmployees' );
@@ -52,11 +50,7 @@ function displayEmployees( arrayToDisplay ){
 
 function removeEmployee(){
     console.log( 'in removeEmployee' );
-    //$( this ).parent().remove();  
-    // get this item's index
     console.log( $( this ).data( 'index' ) );
-    // splice this item out of inventory
     employees.splice( $( this ).data( 'index' ), 1 );
-    // display the updated inventory
     displayEmployees( employees ); 
 }           
