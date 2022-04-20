@@ -1,7 +1,6 @@
 # Project Name
+Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Allows businesses to calculate monthly expenses by providing employee salaries. Salary is stored and divided by 12.
